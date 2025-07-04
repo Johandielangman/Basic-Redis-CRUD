@@ -3,13 +3,23 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
 	fmt.Println("Starting Server on port 3000")
+
+	router := chi.NewRouter()
+	router.Use(middleware.Logger)
+
+	router.Get("/hello", basicHandler)
+	router.Get("/", basicHandler)
+
 	server := &http.Server{
 		Addr:    ":3000",
-		Handler: http.HandlerFunc(basicHandler),
+		Handler: router,
 	}
 
 	err := server.ListenAndServe()
