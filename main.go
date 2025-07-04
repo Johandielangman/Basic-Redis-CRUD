@@ -1,33 +1,17 @@
 package main
 
 import (
+	"chi2/application"
+	"context"
 	"fmt"
-	"net/http"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
 	fmt.Println("Starting Server on port 3000")
 
-	router := chi.NewRouter()
-	router.Use(middleware.Logger)
-
-	router.Get("/hello", basicHandler)
-	router.Get("/", basicHandler)
-
-	server := &http.Server{
-		Addr:    ":3000",
-		Handler: router,
-	}
-
-	err := server.ListenAndServe()
+	app := application.New()
+	err := app.Start(context.TODO())
 	if err != nil {
-		fmt.Println("failed to listen and serve", err)
+		fmt.Println("Failed to start server:", err)
 	}
-}
-
-func basicHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, World!"))
 }
