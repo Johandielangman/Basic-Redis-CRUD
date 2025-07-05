@@ -1,4 +1,4 @@
-module chi2
+module github.com/Johandielangman/Basic-Redis-CRUD
 
 go 1.24.3
 

@@ -1,11 +1,12 @@
 package order
 
 import (
-	"chi2/model"
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
+
+	"github.com/Johandielangman/Basic-Redis-CRUD/model"
 
 	"github.com/redis/go-redis/v9"
 )

@@ -1,8 +1,6 @@
 package handler
 
 import (
-	"chi2/model"
-	"chi2/repository/order"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -10,6 +8,9 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/Johandielangman/Basic-Redis-CRUD/model"
+	"github.com/Johandielangman/Basic-Redis-CRUD/repository/order"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/google/uuid"

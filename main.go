@@ -1,11 +1,12 @@
 package main
 
 import (
-	"chi2/application"
 	"context"
 	"fmt"
 	"os"
 	"os/signal"
+
+	"github.com/Johandielangman/Basic-Redis-CRUD/application"
 )
 
 func main() {

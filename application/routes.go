@@ -3,8 +3,8 @@ package application
 import (
 	"net/http"
 
-	"chi2/handler"
-	"chi2/repository/order"
+	"github.com/Johandielangman/Basic-Redis-CRUD/handler"
+	"github.com/Johandielangman/Basic-Redis-CRUD/repository/order"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
